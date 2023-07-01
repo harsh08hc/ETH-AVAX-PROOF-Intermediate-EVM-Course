@@ -29,3 +29,5 @@ If the condition is met, it returns the result of the multiplication.
 Make sure you have Solidity ^0.8.17 installed.
 Compile and deploy the ErrorHandling contract to a supported Ethereum network.
 Interact with the deployed contract by calling the available functions and providing the required parameters.
+# Video Walkthrough
+https://www.loom.com/share/d0c6e60c16bf4f3fb19b62cc9f2dcd31?sid=2b42d8ac-3c53-4623-a01e-c9b09d507312
