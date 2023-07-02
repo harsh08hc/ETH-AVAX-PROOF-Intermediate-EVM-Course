@@ -1,19 +1,29 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+ // SPDX-License-Identifier: MIT
+pragma solidity 0.8.18;
 
-contract ErrorHandling {
-    uint b=10;
-    function testAssert(uint num) public pure{
-        assert(num!=0);
+contract Errorhandling {
+    bool public sunny = true;
+    bool public umbrella = false;
+    uint finalCall = 0;
+
+    
+    function weather () public {
+        require(sunny,"IT IS NOT SUNNY TODAY!!");
+        finalCall += 3;
+    
+        assert (finalCall != 0);
     }
-    function testRevert(uint _numerator, uint _denomenator) public pure returns (uint){
-        if(_numerator<_denomenator){  
-            revert("numerator should be greater than denomenator according to condition");        
+    function weatherChanger() public{
+        sunny = !sunny;
+    }
+    function getCal() public view returns(uint) {
+        return finalCall;
+    }
+    function BringUmbrella () public {
+        if(!sunny){
+            umbrella = true;
+        }else{
+            revert("No Umbrella needed");
         }
-        return _numerator/_denomenator;
-    }
-    function testRequire(uint a) public view returns (uint){
-        require(a>0,"Value of a is zero , as expecting result should not be zero");
-        return a*b;
     }
 }
